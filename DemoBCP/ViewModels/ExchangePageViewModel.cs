@@ -75,7 +75,7 @@ namespace DemoBCP.ViewModels
 
         private void UpdateOutputValue()
         {
-            OutputValue = InputValue / CurrencyWrapper.GetBuyingRate;
+            OutputValue = InputValue * CurrencyWrapper.GetBuyingRate;
         }
 
         private void SubscribeToCurrencies()
@@ -88,8 +88,8 @@ namespace DemoBCP.ViewModels
         }
         public override void OnInitializedAsync(InitializedEventArgs e)
         {
-            var CurrencyFrom = _exchangeServices.GetCurrencyByAbb("PEN");
-            var CurrencyTo = _exchangeServices.GetCurrencyByAbb("USD");
+            var CurrencyFrom = _exchangeServices.GetCurrencyByAbb("USD");
+            var CurrencyTo = _exchangeServices.GetCurrencyByAbb("PEN");
             CurrencyWrapper = new CurrencyWrapper(CurrencyFrom, CurrencyTo);
         }
     }

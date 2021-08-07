@@ -42,7 +42,11 @@ namespace DemoBCP.Models
             CurrencyOutput = currencyOutPut;
         }
 
-        public double GetBuyingRate { get => Math.Round(CurrencyInput.BuyingRateDollar / CurrencyOutput.SellingRateDollar, 5); }
-        public double GetSalesRate { get => Math.Round(CurrencyInput.SellingRateDollar / CurrencyOutput.BuyingRateDollar, 5); }
+        //public double GetBuyingRate { get => Math.Round(CurrencyInput.BuyingRateDollar / CurrencyOutput.SellingRateDollar, 5); }
+        //public double GetSalesRate { get => Math.Round(CurrencyInput.SellingRateDollar / CurrencyOutput.BuyingRateDollar, 5); }
+        public double GetBuyingRate { get => Math.Round(CurrencyOutput.SellingRateDollar / CurrencyInput.BuyingRateDollar, 5); }
+        public double GetSalesRate { get => Math.Round(CurrencyOutput.BuyingRateDollar / CurrencyInput.SellingRateDollar, 5); }
+        public double GetBuyingRateInverse { get => Math.Round(CurrencyInput.BuyingRateDollar / CurrencyOutput.SellingRateDollar, 5); }
+
     }
 }

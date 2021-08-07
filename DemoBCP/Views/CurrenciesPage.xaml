@@ -31,7 +31,7 @@
                                             <Label.FormattedText>
                                                 <FormattedString>
                                                     <Span Text="{Binding CurrencyOutput.NameAbb, StringFormat='1 {0} = '}"/>
-                                                    <Span Text="{Binding GetBuyingRate, StringFormat='{0:F5} '}"/>
+                                                    <Span Text="{Binding GetBuyingRateInverse, StringFormat='{0:F5} '}"/>
                                                     <Span Text="{Binding CurrencyInput.NameAbb}"/>
                                                 </FormattedString>
                                             </Label.FormattedText>
