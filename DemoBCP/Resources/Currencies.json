@@ -1,0 +1,59 @@
+  [
+    {
+      "name": "Euro",
+      "nameAbb": "EUR",
+      "buyingRateDollar": 0.85,
+      "sellingRateDollar": 0.82,
+      "flagName": "European Union",
+      "imageFlagRoute": "european_union"
+    },
+    {
+      "name": "Dolar",
+      "nameAbb": "USD",
+      "buyingRateDollar": 1.0,
+      "sellingRateDollar": 1.0,
+      "flagName": "United States",
+      "imageFlagRoute": "united_states"
+    },
+    {
+      "name": "Yen",
+      "nameAbb": "JPY",
+      "buyingRateDollar": 110.23,
+      "sellingRateDollar": 110.15,
+      "flagName": "Japan",
+      "imageFlagRoute": "japan"
+    },
+    {
+      "name": "Libra Esterlina",
+      "nameAbb": "GBP",
+      "buyingRateDollar": 0.72,
+      "sellingRateDollar": 0.7,
+      "flagName": "United Kingdom",
+      "imageFlagRoute": "united_kingdom"
+    },
+    {
+      "name": "Franco Suizo",
+      "nameAbb": "CHF",
+      "buyingRateDollar": 0.91,
+      "sellingRateDollar": 0.89,
+      "flagName": "Swizerland",
+      "imageFlagRoute": "swizerland"
+    },
+    {
+      "name": "Dolar Canadiense",
+      "nameAbb": "CAD",
+      "buyingRateDollar": 1.26,
+      "sellingRateDollar": 1.22,
+      "flagName": "Canada",
+      "imageFlagRoute": "canada"
+    },
+    {
+      "name": "Sol Peruano",
+      "nameAbb": "PEN",
+      "buyingRateDollar": 4.07,
+      "sellingRateDollar": 4.05,
+      "flagName": "Perú",
+      "imageFlagRoute": "peru"
+    }
+  ]
+

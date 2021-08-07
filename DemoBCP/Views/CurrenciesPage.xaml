@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Shell.PresentationMode="ModalAnimated"
+             xmlns:viewModelBase="clr-namespace:DemoBCP.ViewModels.Base" 
+             viewModelBase:ViewModelLocator.AutoWireViewModel="true"
+             Visual="Material" Padding="20"
+             x:Class="DemoBCP.Views.CurrenciesPage"
+             x:Name="rootElement">
+    <ContentPage.Content>
+        <Grid RowDefinitions="200,auto,auto">
+            <Image Grid.Row="0" HeightRequest="150" VerticalOptions="Center" Source="splash_logo"></Image>
+            <ListView Grid.Row="1" ItemsSource="{Binding CurrencyWrappers}" HasUnevenRows="True" SelectionMode="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Margin="2">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding BindingContext.SelectedCurrencyCommand, Source={Reference rootElement}}" 
+                                                          CommandParameter="{Binding .}"></TapGestureRecognizer>
+                                </Frame.GestureRecognizers>
+                                <Grid ColumnDefinitions="auto,*" ColumnSpacing="10">
+                                    <Image  Grid.Row="0" Grid.Column="0" HeightRequest="60">
+                                        <Image.Source>
+                                            <FileImageSource File="{Binding CurrencyInput.ImageFlagRoute}"></FileImageSource>
+                                        </Image.Source>
+                                    </Image>
+                                    <StackLayout Grid.Column="1" Orientation="Vertical">
+                                        <Label Text="{Binding CurrencyInput.FlagName}" FontAttributes="Bold"></Label>
+                                        <Label>
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="{Binding CurrencyOutput.NameAbb, StringFormat='1 {0} = '}"/>
+                                                    <Span Text="{Binding GetBuyingRate, StringFormat='{0:F5} '}"/>
+                                                    <Span Text="{Binding CurrencyInput.NameAbb}"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
